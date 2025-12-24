@@ -137,6 +137,7 @@ def patch_eac3_file(filename):
             setbit(data, 1, bit_base + 61)
 
         # EXACT chanmap
+        # fixed chanmap = 0b0110100000000000
         setbyte(data, 0b01101000, bit_base + 62)
         setbyte(data, 0x00, bit_base + 70)
 
@@ -185,3 +186,4 @@ if __name__ == "__main__":
     parser.add_argument("-i", "--input", required=True, help="Input .eac3 file")
     args = parser.parse_args()
     main(args.input)
+
